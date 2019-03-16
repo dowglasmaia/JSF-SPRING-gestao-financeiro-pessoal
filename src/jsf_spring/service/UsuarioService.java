@@ -1,5 +1,7 @@
 package jsf_spring.service;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +16,7 @@ public class UsuarioService {
 	
 
 	/* Salvar */
+	@Transactional
 	public Usuario save(Usuario obj) {
 		obj.setAtivo(true);
 		return dao.save(obj);

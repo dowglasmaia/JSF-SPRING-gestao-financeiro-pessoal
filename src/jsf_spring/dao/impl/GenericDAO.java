@@ -5,20 +5,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 import jsf_spring.dao.interfac.GenereciDAOInterface;
+import jsf_spring.util.JPAUtil;
 
 public class GenericDAO<E> implements GenereciDAOInterface<E> {
 	private static final long serialVersionUID = 1L;
-	/*
-	 * @PersistenceContext private EntityManager entityManager;
-	 * 
-	 * protected EntityManager getEntityManager() { return entityManager; }
-	 */
+
+	private EntityManager manager;
+	
+	public GenericDAO() {
+		this.manager = JPAUtil.getEntmanager();
+	}
+
 	// Metodo auxilar para Consultas Genericas, Recuperando a Class de Instancia
 	@SuppressWarnings({ "unused", "unchecked" })
 	private final Class<E> entidadeClass = (Class<E>) ((ParameterizedType) getClass().getGenericSuperclass())
@@ -27,17 +26,12 @@ public class GenericDAO<E> implements GenereciDAOInterface<E> {
 	/* salvar */
 	@Override
 	public E save(E obj) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("jsf_spring");
-		EntityManager manager = factory.createEntityManager();
-		manager.getTransaction().begin();
-
-		manager.persist(obj);
-		manager.flush();
-
-		manager.getTransaction().commit();
-		manager.close();
-
-		return obj;
+		this.manager.getTransaction().begin();
+		this.manager.persist(obj);
+		this.manager.flush();
+		this.manager.getTransaction().commit();
+		this.manager.close();
+	return obj;
 
 	}
 

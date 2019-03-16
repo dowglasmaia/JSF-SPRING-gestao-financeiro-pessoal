@@ -25,7 +25,7 @@ public class UsuarioController {
 
 	public String salvar() {		
 		service.save(usuario);
-		return "/pages/usuario?faces-redirect=true";
+		return "/pages/usuario.xhtml?faces-redirect=true";
 	}
 
 	/* ===Getters e Setters ==== */
