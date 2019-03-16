@@ -4,14 +4,11 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
 public interface GenereciDAOInterface<E> extends Serializable {
 	
-	void save(E obj);
+	E save(E obj);
 
-	void update(E obj);
+	E update(E obj);
 
 	void delete(Long id);
 

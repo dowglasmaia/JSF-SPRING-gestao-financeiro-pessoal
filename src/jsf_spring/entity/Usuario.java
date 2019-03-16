@@ -2,6 +2,7 @@ package jsf_spring.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,7 +35,7 @@ public class Usuario implements Serializable {
 	private String senha;
 
 	@DateTimeFormat(pattern= "dd/MM/yyyy")
-	private LocalDate nascimento;
+	private Date nascimento;
 
 	@Column(length = 100)
 	private String celular;
@@ -48,7 +49,7 @@ public class Usuario implements Serializable {
 
 	}
 
-	public Usuario(Long id, String nome, String email, String login, String senha, LocalDate nascimento, String celular,
+	public Usuario(Long id, String nome, String email, String login, String senha, Date nascimento, String celular,
 			String idioma, Boolean ativo) {
 		this.id = id;
 		this.nome = nome;
@@ -101,11 +102,11 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 	}
 
-	public LocalDate getNascimento() {
+	public Date getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(LocalDate nascimento) {
+	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
 	}
 
