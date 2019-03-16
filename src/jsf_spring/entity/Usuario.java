@@ -1,7 +1,6 @@
 package jsf_spring.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;

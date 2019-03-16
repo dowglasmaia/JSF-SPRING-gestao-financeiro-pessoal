@@ -1,5 +1,6 @@
 package jsf_spring.controller;
 
+import org.omnifaces.util.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -25,7 +26,8 @@ public class UsuarioController {
 
 	public String salvar() {		
 		service.save(usuario);
-		return "/pages/usuario.xhtml?faces-redirect=true";
+		Messages.addGlobalInfo("Usuario Salvo Com Sucesso!");
+		return "";
 	}
 
 	/* ===Getters e Setters ==== */
