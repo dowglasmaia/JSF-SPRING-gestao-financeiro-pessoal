@@ -1,7 +1,5 @@
 package jsf_spring.service;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +13,8 @@ public class UsuarioService {
 	private UsuarioDAO dao;
 	
 
-	/* Salvar */
-	@Transactional
-	public Usuario save(Usuario obj) {
+	/* Salvar */	
+	public Usuario save(Usuario obj) throws Exception  {
 		obj.setAtivo(true);
 		return dao.save(obj);
 	}

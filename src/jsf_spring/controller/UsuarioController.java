@@ -20,16 +20,20 @@ public class UsuarioController {
 	private String confirmaSenha;
 
 	public UsuarioController() {
-		
 		this.usuario = new Usuario();
 	}
 
-	public String salvar() {		
-		service.save(usuario);
-		Messages.addGlobalInfo("Usuario Salvo Com Sucesso!");
-		return "";
+	/*== salvar ==*/
+	public void salvar() {
+		try {
+			service.save(usuario);
+			Messages.addFlashGlobalInfo("Usuario Salvo com Sucesso!");
+		} catch (Exception e) {
+			Messages.addFlashGlobalError("Erro ao tentar salvar Usuario!", e);
+		}
 	}
 
+	
 	/* ===Getters e Setters ==== */
 	public Usuario getUsuario() {
 		return usuario;

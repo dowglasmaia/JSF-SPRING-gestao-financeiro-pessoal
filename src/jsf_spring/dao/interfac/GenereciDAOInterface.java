@@ -6,18 +6,18 @@ import java.util.List;
 
 public interface GenereciDAOInterface<E> extends Serializable {
 	
-	E save(E obj);
+	E save(E obj) throws Exception;
 
-	E update(E obj);
+	E update(E obj) throws Exception;
 
-	void delete(Long id);
+	void delete(Long id) throws Exception;
 
-	E findById(Long id);
+	E findById(Long id) throws Exception;
 
-	List<E> FindAll();
+	List<E> FindAll() throws Exception;
 
-	List<E> findByName(String nome);
+	List<E> findByName(String nome) throws Exception;
 
-	List<E> findByDate(LocalDate entrada, LocalDate saida);
+	List<E> findByDate(LocalDate entrada, LocalDate saida) throws Exception;
 
 }
