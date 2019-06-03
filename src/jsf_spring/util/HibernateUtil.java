@@ -5,8 +5,11 @@ import java.io.Serializable;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.ApplicationScope;
 
-
+@Component
+@ApplicationScope
 public class HibernateUtil implements Serializable {
 	private static final long serialVersionUID = 1L;
 

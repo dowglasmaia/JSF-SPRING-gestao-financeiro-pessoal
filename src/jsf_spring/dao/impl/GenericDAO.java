@@ -28,6 +28,7 @@ public class GenericDAO<E> implements GenereciDAOInterface<E> {
 		try {
 			tx = session.beginTransaction();
 			session.save(obj);
+			session.flush();
 			tx.commit();
 			return obj;
 		} catch (RuntimeException e) {

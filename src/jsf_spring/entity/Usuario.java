@@ -8,9 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.NaturalId;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Usuario implements Serializable {
@@ -33,7 +34,7 @@ public class Usuario implements Serializable {
 	@Column(length = 100)
 	private String senha;
 
-	@DateTimeFormat(pattern= "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
 	private Date nascimento;
 
 	@Column(length = 100)
