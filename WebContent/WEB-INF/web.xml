@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 	<display-name>jsf_spring</display-name>
-	
-	
+
+
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 		<welcome-file>index.jsf</welcome-file>
 	</welcome-file-list>
-	
+
 	<session-config>
 		<session-timeout>15</session-timeout>
 		<tracking-mode>COOKIE</tracking-mode>
@@ -60,9 +60,10 @@
 		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 
-	<servlet-mapping><!-- Mapeia o Servlet -->
-		<servlet-name>Spring-Servlet</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+	<!-- Ativando o Font Icons  com Primefaces-->
+	<context-param>
+		<param-name>primefaces.FONT_AWESOME</param-name>
+		<param-value>true</param-value>
+	</context-param>
 
 </web-app>
