@@ -10,12 +10,12 @@
 	<ui:define name="conteudo">
 
 		<h:form id="frmUsuario" styleClass="form-group">
-			<div class="card text-white bg-primary">
+			<div class="card text-white bg-dark">
 				<div class="card-header">
 					<h4>Lista de Usuários</h4>
 				</div>
 				<div class="card-body">
-					<h:dataTable styleClass="table table-hover table-primary">
+					<h:dataTable styleClass="table table-hover table-dark">
 						<h:column >
 							<f:facet name="header" >
 								Código
@@ -51,7 +51,7 @@
 				<!-- Butões -->
 				<div class="modal-footer">
 
-					<h:button value=" Novo " styleClass="btn btn-outline-info btn-lg" />
+					<h:button value=" Novo " outcome="usuario.jsf" styleClass="btn btn-outline-info btn-lg" />
 
 				</div>
 			</div>

@@ -40,9 +40,7 @@
 	<title>Maia Ti</title>
 
 </h:head>
-<h:body styleClass="hold-transition skin-blue sidebar-mini">
-
-	<p:growl />
+<h:body styleClass="hold-transition skin-blue sidebar-mini">	
 
 	<div class="wrapper">
 
@@ -130,8 +128,14 @@
 
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
+				<p:tooltip /> <!-- Mostra MSG PrimeFaces -->
 			<!-- Main content -->
 			<section class="content container-fluid mt-5"> 
+			
+			<p:messages id="messages" showDetail="false" closable="true" > <!-- MSG PrimeFaces -->
+				 <p:autoUpdate />
+		 	</p:messages>
+			
 			<ui:insert
 				name="conteudo">
 
