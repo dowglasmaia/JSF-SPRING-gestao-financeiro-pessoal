@@ -15,13 +15,26 @@
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
 
-	<!-- Bootstrap -->
-	<h:outputStylesheet library="dist" name="css/bootstrap.min.flatly.css" />
 
 	<!-- Theme style -->
 	<h:outputStylesheet library="dist" name="css/AdminLTE.min.css" />
+	
+	<!-- Bootstrap -->
+	<h:outputStylesheet library="dist" name="bootstrap-4.3/css/bootstrap.min.css" />
 
+	<!-- css skins -->
 	<h:outputStylesheet library="dist" name="css/skins/skin-blue.min.css" />
+	
+	
+	<!--  Addd favicon.png -->
+	<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/img/favicon.png"/>
+
+	<!-- Bootstrap 4.3 js -->
+	<h:outputScript library="dist"
+		name="bootstrap-4.3/js/bootstrap.min.js"/>
+
+	<!-- AdminLTE App  js-->
+	<h:outputScript library="dist" name="js/adminlte.min.js"/>
 
 
 	<title>Maia Ti</title>
@@ -34,8 +47,8 @@
 	<div class="wrapper">
 
 		<!-- Main Header -->
-		<header class="main-header"> 
- 		<a href="/jsf_spring/pages/index.jsf" class="logo"> 
+		<header class="main-header" > 
+ 		<a href="/jsf_spring/pages/index.jsf" class="logo py-3" style="height:70px !important"> 
 			<span class="logo-mini">
 			<p>M</p>
 			</span> 
@@ -43,14 +56,16 @@
 		</span>
 		</a> 
 		
-		 <nav class="navbar navbar-static-top"
-			role="navigation"> <!-- Sidebar toggle button--> <a href="#"
-			class="sidebar-toggle" data-toggle="push-menu" role="button"> <span
-			class="sr-only">Toggle navigation</span>
-		</a> 
+		 <nav class="navbar navbar-static-top "	role="navigation">
+		  
+			<!-- Sidebar toggle button--> 
+			<a href="#"	class="sidebar-toggle" data-toggle="push-menu" role="button"> 
+				<span class="sr-only">Toggle navigation</span>
+			</a> 
 		<!-- Navbar Right Menu -->
-		<div class="navbar-custom-menu">
+		 <div class="navbar-custom-menu">
 			<ul class="nav navbar-nav">
+				
 				<!-- User Account Menu -->
 				<li class="dropdown user user-menu">
 				<a href="#"> 
@@ -60,19 +75,22 @@
 				<span class="hidden-xs">Dowglas Maia</span>
 				</a>
 				</li>
+				
 			</ul>
 		</div>
 		</nav> 
 		</header>
 
 		<!-- Left side column. contains the logo and sidebar -->
-		<aside class="main-sidebar">
+		<aside class="main-sidebar my-4">
 		<section class="sidebar"> 
 		<ul class="sidebar-menu" data-widget="tree">
-			<li class="header text-center">MENU</li>
+			<li class="header text-center my-1">MENU</li>
 
 			<!-- Optionally, you can add icons to the links -->
-			<li><a href="index.jsf"><i class="fa fa-link"></i> <span>Home</span></a>
+			<li>
+				<a href="index.jsf"><i class="fa fa-link"></i> 
+				<span>Home</span></a>
 			</li>
 
 
@@ -80,7 +98,7 @@
 			<li class="treeview">
 			<a href="#">
 			        <i class="fa fa-link"></i>
-					<span>Cadastro</span> 
+					<span >Cadastro</span> 
 					<span class="pull-right-container"> 
 					<i class="fa fa-angle-left pull-right"></i>
 				   </span> 
@@ -113,7 +131,7 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Main content -->
-			<section class="content container-fluid"> 
+			<section class="content container-fluid mt-5"> 
 			<ui:insert
 				name="conteudo">
 
@@ -125,26 +143,16 @@
 		<!-- Main Footer -->
 		<footer class="main-footer"> 
 		 	<!-- To the right -->
-			<div class="pull-right hidden-xs">Anything you want</div>
+			<div class="pull-right hidden-xs">Desenvolvidor por: Dowglas Maia</div>
 		
-			<!-- Default to the left --> <strong>Copyright &copy; 2016 
-			<a href="#">Company</a>.
-			</strong> All rights reserved. 
+			<!-- Default to the left --> <strong>&copy; 2019  | 
+			<a href="#">Maia Ti</a>.
+			</strong> Todos os direitos reservados
 		</footer>
 
 	</div>
 	<!-- ./wrapper -->
 
-	<!-- jQuery 3 -->
-	<h:outputScript library="dist"
-		name="bower_components/jquery/dist/jquery.min.js"></h:outputScript>
-
-	<!-- Bootstrap 3.3.7 -->
-	<h:outputScript library="dist"
-		name="bower_components/bootstrap/dist/js/bootstrap.min.js"></h:outputScript>
-
-	<!-- AdminLTE App -->
-	<h:outputScript library="dist" name="js/adminlte.min.js"></h:outputScript>
 
 
 </h:body>
